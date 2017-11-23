@@ -21,7 +21,15 @@ class TestNWCK(unittest.TestCase):
         node_b = 'A'
         self.nwck_3 = NWCK(NWCK_tree_3,node_a,node_b)
 
+    def test_get_next_internal_node_number(self):
+        current_internal_node_number = self.nwck.current_internal_node_number
+        self.assertEqual(self.nwck.__get_next_internal_node_number(), current_internal_node_number + 1)
+
     def test_get_difference_between_nodes(self):
         self.assertEqual(self.nwck.distance_between_nodes, 3)
         self.assertEqual(self.nwck_2.distance_between_nodes,1)
         self.assertEqual(self.nwck_3.distance_between_nodes, 3)
+
+    def test_is_special_character(self):
+        self.assertTrue(self.nwck.is_special(')'))
+        self.assertFalse(self.nwck.is_special('apple'))
