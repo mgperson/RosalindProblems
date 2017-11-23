@@ -86,8 +86,8 @@ class NWCK:
         return -1
 
 
-    def is_special(self, char):
-        return char in '(),;'
+    def is_special(self, character):
+        return character in '(),;'
 
 
 def Main():
